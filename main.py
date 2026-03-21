@@ -2,6 +2,27 @@ import asyncio
 from pyrogram import Client, idle
 import aiosqlite
 
+# ================== KEEP ALIVE (Flask) ==================
+
+from flask import Flask
+from threading import Thread
+
+web_app = Flask('')
+
+@web_app.route('/')
+def home():
+    return "Bot is alive ✅"
+
+def run_web():
+    web_app.run(host='0.0.0.0', port=8080)
+
+def keep_alive():
+    t = Thread(target=run_web)
+    t.start()
+
+# ================== CONFIG ==================
+
+
 # ================== CONFIG ==================
 
 DB_NAME = "database.db"
