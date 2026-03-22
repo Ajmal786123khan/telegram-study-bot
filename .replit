@@ -1,35 +1,15 @@
-================== REPLIT CONFIG ==================
-
 run = "python3 main.py"
 
 language = "python3"
 
-Ensures Replit installs dependencies automatically
-
 onBoot = "pip install -r requirements.txt"
 
-Optional: If using Flask keep-alive
-
 entrypoint = "main.py"
-
-Environment (recommended)
 
 [env]
 PYTHONUNBUFFERED = "1"
 
-Hidden files (optional)
-
 hidden = [".config", ".cache", "pycache"]
-
-Deployment settings (important for public URL)
 
 [nix]
 channel = "stable-22_11"
-
-Optional: if using packages that need nix
-
-[nix.packages]
-
-Uncomment if needed
-
-python311 = true
